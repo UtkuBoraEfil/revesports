@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Orbitron } from "next/font/google"; // gecici
+
+import { cn } from "@/lib/utils";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -12,6 +15,12 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+
+const impact = localFont({
+  src: "./fonts/impact.ttf",
+});
+
+const inter = impact; // gecici
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,11 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={cn(inter.className)}>{children}</body>
     </html>
   );
 }
