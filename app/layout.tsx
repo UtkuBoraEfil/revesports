@@ -34,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(inter.className)}>{children}</body>
+      <body className={cn(`font-impact bg-default-black text-default-white `)}>{children}</body>
     </html>
   );
 }

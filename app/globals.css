@@ -13,12 +13,24 @@ body {
 
 }
 
+.darker-bg{
+  filter: brightness(0.8);
+}
+
 .arrow-down{
 
  background: rgba(245, 245, 245, 0.04);
  box-shadow: 0px -8px 22.5px 8px rgba(0, 0, 0, 0.25);
  backdrop-filter: blur(12px);
  border-radius: 1000px;
+}
+
+.font-roboto{
+  font-family: 'Roboto', sans-serif;
+}
+
+.font-impact{
+  font-family: 'Impact', sans-serif;
 }
 
 
