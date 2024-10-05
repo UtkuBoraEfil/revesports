@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 
 const impact = localFont({
-  src: "./fonts/impact.ttf",
+  src: "./fonts/impact.woff",
 });
 
 const inter = impact; // gecici
