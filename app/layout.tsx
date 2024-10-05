@@ -5,16 +5,6 @@ import { Orbitron } from "next/font/google"; // gecici
 
 import { cn } from "@/lib/utils";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 const impact = localFont({
   src: "./fonts/impact.ttf",
