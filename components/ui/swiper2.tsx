@@ -37,4 +37,3 @@ export function Swiper2() {
     </Swiper>
   );
 }
-

@@ -22,16 +22,3 @@ export function FirstSection() {
   );
 }
 
-/* Arrow - Down */
-
-// position: absolute;
-// width: 72px;
-// height: 125px;
-// left: calc(50% - 72px/2);
-// top: 718px;
-
-// background: rgba(245, 245, 245, 0.04);
-// box-shadow: 0px -8px 22.5px 8px rgba(0, 0, 0, 0.25);
-// backdrop-filter: blur(12px);
-// /* Note: backdrop-filter has minimal browser support */
-// border-radius: 1000px;

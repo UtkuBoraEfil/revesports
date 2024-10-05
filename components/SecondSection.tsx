@@ -1,8 +1,27 @@
+
+"use client"
 import { ArrowRight } from "lucide-react";
 import { ArrowLeft } from "lucide-react";
 import { Swiper1 } from "@/components/ui/swiper1";
+import { CustomNavigation } from "@/components/ui/customNavigation";
+import { useRef } from "react";
 
 export function SecondSection() {
+
+  const swiperRef = useRef<any>(null); // Create ref for Swiper instance
+
+  const handleNext = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slideNext(); // Navigate to next slide
+    }
+  };
+
+  const handlePrev = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slidePrev(); // Navigate to previous slide
+    }
+  };
+
   return (
     <section className="pt-20 pb-9 px-14">
       <div className="flex justify-between mb-16">
@@ -16,7 +35,7 @@ export function SecondSection() {
             <p className="pl-6 opacity-50">The Reason</p>
           </div>
           <div className="flex flex-col gap-8 max-w-[660px]">
-            <h2 className="text-8xl ">
+            <h2 className="text-8xl leading-none">
               WHAT IS <br /> REVESPORT?
             </h2>
             <p className="opacity-60 font-roboto">
@@ -31,18 +50,18 @@ export function SecondSection() {
             </p>
           </div>
         </div>
-        <div className='min-h-full content-end'>
-            <div className='flex gap-3'>
-                <button className=' size-12 grid place-content-center rounded-full border border-default-white border-opacity-50'>
-                    <ArrowLeft/>
-                </button>
-                <button className=' size-12 grid place-content-center rounded-full bg-default-white text-default-black'>
-                    <ArrowRight/>
-                </button>
-            </div>
+        <div className="min-h-full content-end">
+          <div className="flex gap-3">
+            <button onClick={handlePrev} className=" size-12 grid place-content-center rounded-full border border-default-white border-opacity-50">
+              <ArrowLeft />
+            </button>
+            <button onClick={handleNext} className=" size-12 grid place-content-center rounded-full bg-default-white text-default-black">
+              <ArrowRight />
+            </button>
+          </div>
         </div>
       </div>
-      <Swiper1 />
+      <Swiper1 swiperRef={swiperRef} />
     </section>
   );
 }

@@ -21,7 +21,6 @@ export function CustomNavigation() {
   );
 }
 
-
 /* Img */
 
 // width: 655px;

@@ -3,19 +3,25 @@
 import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+
 import { Navigation } from "swiper/modules";
 import { FirstCard } from "@/components/ui/first-card";
-
 import 'swiper/css/pagination';
-
 import { Pagination } from 'swiper/modules';
 
-export function Swiper1 () {
+import { MutableRefObject } from "react";
+
+export function Swiper1 ({ swiperRef }: { swiperRef: MutableRefObject<any> }) {
   return (
     <Swiper slidesPerView={3}
     spaceBetween={30}
     pagination={{
       clickable: true,
+    }}
+    onSwiper={(swiper) => {
+      if (swiperRef) {
+        swiperRef.current = swiper; // Attach swiper instance to ref
+      }
     }}
 
     className="mySwiper gap-9">
