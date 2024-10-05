@@ -58,7 +58,7 @@ export function Services() {
               <div className="max-w-[350px]">
                 <h2 className=" text-4xl pb-4">START TO PROCESS</h2>
                 <p className="opacity-60 font-roboto">
-                  Let's start a comprehensive counselling service, including a
+                  Let&apos;s start a comprehensive counselling service, including a
                   personalised video.
                 </p>
               </div>

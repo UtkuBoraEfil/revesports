@@ -40,7 +40,7 @@ export function SecondSection() {
             <p className="opacity-60 font-roboto">
               ReveSport is a personal development startup that aims to turn your
               dreams into reality in the world of sport. ReveSport, born from
-              the combination of the French words 'rêve' (dream) and 'sport'
+              the combination of the French words &apos;rêve&apos; (dream) and &apos;sport&apos;
               (sport), offers personalised solutions for athletes to maximise
               their success. It provides you with the chance to pursue both an
               academic career and an athletic career in America by identifying
