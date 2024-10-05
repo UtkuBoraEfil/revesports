@@ -3,7 +3,6 @@
 import { ArrowRight } from "lucide-react";
 import { ArrowLeft } from "lucide-react";
 import { Swiper1 } from "@/components/ui/swiper1";
-import { CustomNavigation } from "@/components/ui/customNavigation";
 import { useRef } from "react";
 
 export function SecondSection() {

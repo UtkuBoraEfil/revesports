@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Orbitron } from "next/font/google"; // gecici
 
 import { cn } from "@/lib/utils";
 
@@ -10,7 +9,6 @@ const impact = localFont({
   src: "./fonts/impact.woff",
 });
 
-const inter = impact; // gecici
 
 export const metadata: Metadata = {
   title: "Create Next App",

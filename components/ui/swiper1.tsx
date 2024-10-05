@@ -1,13 +1,10 @@
 "use client";
 
-import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-import { Navigation } from "swiper/modules";
 import { FirstCard } from "@/components/ui/first-card";
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
 
 import { MutableRefObject } from "react";
 
