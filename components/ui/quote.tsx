@@ -4,7 +4,7 @@ import { InfiniteMovingCards } from "./infinite-moving-cards";
 
 export function Quote() {
   return (
-    <div className="flex  overflow-hidden bg-default-white py-5   ">
+    <div className="flex  overflow-hidden bg-default-white md:py-5 py-3   ">
       <InfiniteMovingCards
         items={quotes}
         direction="right"

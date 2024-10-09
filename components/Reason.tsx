@@ -1,9 +1,9 @@
 export function Reason() {
   return (
-    <section className="pb-9 px-14">
-      <div className="flex justify-between mb-16">
-        <div className="flex">
-          <div className="flex flex-col gap-4 font-roboto w-full">
+    <section className="pb-9 md:px-14 px-6">
+      <div className="flex flex-col md:flex-row md:justify-between mb-16 gap-2">
+        <div className="flex flex-col md:flex-row gap-10 lg:gap-16">
+          <div className="flex flex-col gap-4 font-roboto min-w-fit text-sm md:text-base">
             <p className="pl-6 opacity-50">Revesport</p>
             <p className="pl-6 opacity-50">Services</p>
             <div className="flex gap-4 items-center">
@@ -12,7 +12,7 @@ export function Reason() {
             </div>
           </div>
           <div className="flex flex-col gap-8 ">
-            <h2 className="text-8xl leading-none">
+            <h2 className="lg:text-8xl text-6xl  leading-none">
               THE REASONS THAT MAKE US THE BEST CHOICE.
             </h2>
             <p className="opacity-60 font-roboto">

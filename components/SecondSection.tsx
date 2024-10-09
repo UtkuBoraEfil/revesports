@@ -22,10 +22,10 @@ export function SecondSection() {
   };
 
   return (
-    <section className="pt-20 pb-9 px-14">
-      <div className="flex justify-between mb-16">
-        <div className="flex gap-20">
-          <div className="flex flex-col gap-4 font-roboto">
+    <section className="pt-20 pb-9 md:px-14 px-6">
+      <div className="flex flex-col md:flex-row gap-2 justify-between mb-16">
+        <div className="flex flex-col md:flex-row lg:gap-20 gap-10">
+          <div className="flex flex-col gap-4 font-roboto min-w-fit text-sm md:text-base">
             <div className="flex gap-4 items-center">
               <div className="w-2 h-2 bg-default-white rotate-45"></div>
               <p className="">Revesport</p>
@@ -34,10 +34,10 @@ export function SecondSection() {
             <p className="pl-6 opacity-50">The Reason</p>
           </div>
           <div className="flex flex-col gap-8 max-w-[660px]">
-            <h2 className="text-8xl leading-none">
+            <h2 className="lg:text-8xl text-6xl leading-none">
               WHAT IS <br /> REVESPORT?
             </h2>
-            <p className="opacity-60 font-roboto">
+            <p className="opacity-60 font-roboto text-sm md:text-base">
               ReveSport is a personal development startup that aims to turn your
               dreams into reality in the world of sport. ReveSport, born from
               the combination of the French words &apos;rêve&apos; (dream) and &apos;sport&apos;
@@ -49,7 +49,7 @@ export function SecondSection() {
             </p>
           </div>
         </div>
-        <div className="min-h-full content-end">
+        <div className="min-h-full content-end place-self-end">
           <div className="flex gap-3">
             <button onClick={handlePrev} className=" size-12 grid place-content-center rounded-full border border-default-white border-opacity-50">
               <ArrowLeft />

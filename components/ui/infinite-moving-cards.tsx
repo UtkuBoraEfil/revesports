@@ -87,8 +87,8 @@ export const InfiniteMovingCards = ({
             key={idx}
           >
             <blockquote className="flex items-center gap-6">
-                <div className="w-4 h-4 bg-default-black rotate-45"></div>
-              <span className=" relative z-20 leading-[38px]  text-default-black text-4xl ">
+                <div className="md:w-4 md:h-4 w-2 h-2 bg-default-black rotate-45"></div>
+              <span className=" relative z-20 leading-[38px]  text-default-black md:text-4xl text-2xl ">
                 {item}
               </span>
             </blockquote>

@@ -10,18 +10,34 @@ import { MutableRefObject } from "react";
 
 export function Swiper1 ({ swiperRef }: { swiperRef: MutableRefObject<any> }) {
   return (
-    <Swiper slidesPerView={3}
+    <Swiper
     spaceBetween={30}
     pagination={{
       clickable: true,
     }}
+    breakpoints={
+      {
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 50,
+        },
+      }
+    }
     onSwiper={(swiper) => {
       if (swiperRef) {
         swiperRef.current = swiper; // Attach swiper instance to ref
       }
     }}
 
-    className="mySwiper gap-9">
+    className="mySwiper gap-9 ">
     <SwiperSlide>
         <FirstCard
         title="Volleyball Scholarship"

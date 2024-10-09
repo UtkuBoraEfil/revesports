@@ -12,7 +12,7 @@ export function Swiper2() {
     <Swiper
       navigation={true}
       modules={[Navigation]}
-      className="mySwiper w-full !py-10"
+      className="mySwiper w-full !py-10 !hidden md:!block"
     >
       <SwiperSlide className="darker-bg " >
         <Image

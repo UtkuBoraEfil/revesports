@@ -11,6 +11,10 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		screens: {
+			'md': '900px',
+			'lg': '1140px',
+		},
 		animation: {
 			scroll:
 			  "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
