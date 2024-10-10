@@ -7,9 +7,9 @@ body {
 }
 
 
- .swiper-slide{
-  justify-content: center;
-}
+/* .swiper-slide{
+  justify-content: center!important;
+} */
 
 .bg-flag-image{
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.315), rgba(0, 0, 0, 0.629)), url("/images/flag.jpeg");

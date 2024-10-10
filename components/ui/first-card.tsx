@@ -11,11 +11,11 @@ interface FirstCardProps {
 
 export function FirstCard(props: FirstCardProps) {
   return (
-    <div className="flex flex-col gap-4 max-w-[420px]">
+    <div className="flex flex-col gap-4 max-w-[420px] mx-auto">
       <Image
         src={props.image}
         alt={"image"}
-        className="w-full h-auto object-cover object-center"
+        className="w-full h-auto object-cover object-center "
         width={1000}
         height={1000}
       />
