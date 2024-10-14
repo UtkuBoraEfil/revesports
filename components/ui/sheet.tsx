@@ -65,7 +65,7 @@ const SheetContent = React.forwardRef<
       className={cn(sheetVariants({ side }), className)}
       {...props}
     >
-      <SheetPrimitive.Close className="absolute text-default-black right-4 top-4   disabled:pointer-events-none data-[state=open]:bg-secondary">
+      <SheetPrimitive.Close className="absolute text-default-black right-4 top-4    data-[state=open]:bg-secondary">
         <CircleX size={28}  />
         <span className="sr-only">Close</span>
       </SheetPrimitive.Close>
