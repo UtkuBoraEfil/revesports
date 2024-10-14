@@ -15,9 +15,9 @@ export function Hamburger() {
   return (
     <Sheet>
     <SheetTrigger>
-      <div className="flex  md:hidden self-end">
+      <button className="flex  md:hidden self-end outline-none focus:outline-none">
         <Menu size={24} />
-      </div>
+      </button>
     </SheetTrigger>
     <SheetContent>
           <div className="text-default-black flex flex-col gap-2  text-3xl ">
