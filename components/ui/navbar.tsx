@@ -34,7 +34,9 @@ export function Navbar() {
       <button className=" hidden md:block bg-default-white text-default-black  md:px-6 md:py-3 px-3 py-2 rounded-3xl text-sm md:text-base">
         APPLY
       </button>
-      <Hamburger />
+      <div className="block md:hidden">
+        <Hamburger />
+      </div>
     </div>
   );
 }
