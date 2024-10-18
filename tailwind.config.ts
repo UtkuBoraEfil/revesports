@@ -14,6 +14,7 @@ const config: Config = {
 		screens: {
 			'md': '900px',
 			'lg': '1140px',
+			'xl': '1700px',
 		},
 		animation: {
 			scroll:

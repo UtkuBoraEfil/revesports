@@ -1,0 +1,10 @@
+let blogs = [{title: "Lorem ipsum dolor sit amet", altTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", image: "/images/volleyball.jpg", author: "Seraphina Isabella", category: "Basketball", createdAt: "20 Jan 2024", updatedAt: "Updated At1"}, 
+
+    {title: "Duis aute irure dolor in reprehenderit", altTitle: "Varius cubilia laoreet tristique dui libero ullamcorper aptent mollis. Feugiat duis arcu aliquam proin pharetra. Neque senectus congue eleifend interdum porttitor porta cubilia.", image: "/images/academic.jpg", author: "Maximillian Souza", category: "Soccer", createdAt: "6 Oct 2024", updatedAt: "Updated At2"}, 
+
+    {title: "Excepteur sint occaecat cupidatat non proident", altTitle: "Habitasse metus platea netus dolor dignissim mauris ex dis. Gravida fames sodales semper sociosqu curabitur, nascetur pretium diam cubilia.", image: "/images/social.jpg", author: "Arthur Fleck", category: "Volleyball", createdAt: "27 July 2024", updatedAt: "Updated At3"}, 
+
+    {title: "Metus convallis posuere rutrum fringilla iaculis vel", altTitle: "Quam donec platea morbi nisl senectus, dis pellentesque eget. Lobortis laoreet vehicula eros elit quis mus potenti? Lobortis eleifend etiam; interdum mollis dui non potenti? ", image: "/images/flag.jpeg", author: "Anastasia Evangetino", category: "Volleyball", createdAt: "01 Oct 2023", updatedAt: "Updated At4"}, 
+    
+    {title: "Sodales dapibus nisi aliquet feugiat placerat curabitur nisi sem", altTitle: "Euismod semper volutpat dolor nisl nostra dictum habitasse dapibus. Habitant eget sagittis aenean aliquam nulla diam sit egestas.", image: "/images/flag.jpeg", author: "Nathenial Reginald", category: "Basketball", createdAt: "21 Sep 2023", updatedAt: "Updated At5"}];
+export {blogs};

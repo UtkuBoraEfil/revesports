@@ -15,33 +15,33 @@ export function Hamburger() {
   return (
     <Sheet>
     <SheetTrigger>
-      <button className="flex  md:hidden self-end outline-none focus:outline-none">
+      <div className="flex  md:hidden self-end outline-none focus:outline-none">
         <Menu size={24} />
-      </button>
+      </div>
     </SheetTrigger>
     <SheetContent>
           <div className="text-default-black flex flex-col gap-2  text-3xl ">
             <Link
               href={""}
-              className="hover:translate-x-2 transition-all duration-150"
+              className="hover:translate-x-2 transition-all duration-150 w-fit"
             >
               HOME
             </Link>
             <Link
               href={""}
-              className="hover:translate-x-2 transition-all duration-150"
+              className="hover:translate-x-2 transition-all duration-150 w-fit"
             >
               DETAIL
             </Link>
             <Link
               href={""}
-              className="hover:translate-x-2 transition-all duration-150"
+              className="hover:translate-x-2 transition-all duration-150 w-fit"
             >
               BLOG
             </Link>
             <Link
               href={""}
-              className="hover:translate-x-2 transition-all duration-150"
+              className="hover:translate-x-2 transition-all duration-150 w-fit"
             >
               CONTACT
             </Link>

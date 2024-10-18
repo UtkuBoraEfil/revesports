@@ -7,7 +7,7 @@ export function Navbar() {
       <h2 className=" md:text-2xl text-lg">REVESPORT</h2>
       <div className=" hidden md:flex md:gap-9 gap-2 text-[#F5F5F580] ">
         <Link
-          href={""}
+          href={"/"}
           className="hover:text-default-white transition-all duration-150 text-sm md:text-base"
         >
           HOME
@@ -19,7 +19,7 @@ export function Navbar() {
           DETAIL
         </Link>
         <Link
-          href={""}
+          href={"/blogs"}
           className="hover:text-default-white transition-all duration-150 text-sm md:text-base"
         >
           BLOG
