@@ -33,7 +33,7 @@ const [active, setActive] = useState("All");
         {blogs
           .filter(blog => active === "All" || blog.category === active)
           .map((blog, idx) => (
-            <BlogPart key={idx} title={blog.title} altTitle={blog.altTitle} image={blog.image} author={blog.author} category={blog.category} createdAt={blog.createdAt} updatedAt={blog.updatedAt} />
+            <BlogPart key={idx} title={blog.title} altTitle={blog.altTitle} image={blog.image} author={blog.author} category={blog.category} createdAt={blog.createdAt} updatedAt={blog.updatedAt} slug={blog.slug} />
           ))}
       </div>
     </section>

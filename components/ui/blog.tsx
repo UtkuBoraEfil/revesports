@@ -9,11 +9,12 @@ interface BlogProps {
   category: string;
   createdAt: string;
   updatedAt: string;
+  slug: string;
 }
 export function BlogPart(props: BlogProps) {
   return (
     <Link
-      href={`blog/${props.title}`}
+      href={`blog/${props.slug}`}
       className=" max-w-96 font-roboto  text-default-white  flex flex-col"
     >
       <div className="w-full relative ">
