@@ -5,7 +5,7 @@ import { Services } from "@/components/Services";
 import { Reason } from "@/components/Reason";
 import {Section2} from "@/components/section2";
 import { Newsletter } from "@/components/Newsletter";
-import { Contact } from "@/components/Contact";
+
 
 export default function Home() {
   return (
@@ -19,7 +19,6 @@ export default function Home() {
         <Reason/>
         <Section2/>
         <Newsletter/>
-        <Contact/>
     </main>
   );
 }

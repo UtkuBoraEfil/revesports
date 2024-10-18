@@ -34,7 +34,7 @@ export function Hamburger() {
               DETAIL
             </Link>
             <Link
-              href={""}
+              href={"/blogs"}
               className="hover:translate-x-2 transition-all duration-150 w-fit"
             >
               BLOG

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import {Playfair_Display} from "next/font/google";
 import "./globals.css";
+import { Contact } from "@/components/Contact";
 
 import { cn } from "@/lib/utils";
 
@@ -22,7 +24,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(`font-impact bg-default-black text-default-white `)}>{children}</body>
+      <body className={cn(`font-impact bg-default-black text-default-white `)}>{children}<Contact/></body>
+
     </html>
   );
 }

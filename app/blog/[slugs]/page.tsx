@@ -34,7 +34,7 @@ export default function BlogPart({ params }: { params: any }) {
           height={1000}
           className="w-full h-96 object-cover object-center rounded-md my-6"
         />
-        <p className="md:text-xl leading-7">{blog.text}</p>
+        <p className="md:text-xl leading-7 font-playfair">{blog.text}</p>
       </TracingBeam>
     </section>
   );
