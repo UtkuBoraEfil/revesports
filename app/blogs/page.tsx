@@ -10,20 +10,20 @@ const [active, setActive] = useState("All");
     <section className="bg-default-black text-white">
       <Navbar />
       <div className="w-full md:px-14 px-6 flex justify-between  font-roboto my-5">
-        <div className="flex gap-4">
-          <button onClick={() => setActive("All")} className={cn("py-1 px-2 rounded-sm text-center", (active == "All") && "bg-[#444]")}>
+        <div className="flex md:gap-4 gap-1 justify-between w-full md:justify-normal">
+          <button onClick={() => setActive("All")} className={cn("py-1 px-1 md:px-2 rounded-sm text-center", (active == "All") && "bg-[#444]")}>
             All
           </button>
-          <button onClick={() => setActive("Basketball")} className={cn("py-1 px-2 rounded-sm text-center", (active == "Basketball") && "bg-[#444]")}>
+          <button onClick={() => setActive("Basketball")} className={cn("py-1 px-1 md:px-2 rounded-sm text-center", (active == "Basketball") && "bg-[#444]")}>
             Basketball
           </button>
-          <button onClick={() => setActive("Soccer")} className={cn("py-1 px-2 rounded-sm text-center", (active == "Soccer") && "bg-[#444]")}>
+          <button onClick={() => setActive("Soccer")} className={cn("py-1 px-1 md:px-2 rounded-sm text-center", (active == "Soccer") && "bg-[#444]")}>
             Soccer
           </button>
-          <button onClick={() => setActive("Volleyball")} className={cn("py-1 px-2 rounded-sm text-center", (active == "Volleyball") && "bg-[#444]")}>
+          <button onClick={() => setActive("Volleyball")} className={cn("py-1 px-1 md:px-2 rounded-sm text-center", (active == "Volleyball") && "bg-[#444]")}>
             Volleyball
           </button>
-          <button onClick={() => setActive("Football")} className={cn("py-1 px-2 rounded-sm text-center", (active == "Football") && "bg-[#444]")}>
+          <button onClick={() => setActive("Football")} className={cn("py-1 px-1 md:px-2 rounded-sm text-center", (active == "Football") && "bg-[#444]")}>
             Football
           </button>
 

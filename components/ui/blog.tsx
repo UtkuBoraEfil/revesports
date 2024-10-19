@@ -47,3 +47,4 @@ export function BlogPart(props: BlogProps) {
     </Link>
   );
 }
+
