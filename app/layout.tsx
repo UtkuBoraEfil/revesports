@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import {Playfair_Display} from "next/font/google";
+import {Nanum_Myeongjo} from "next/font/google";
 import "./globals.css";
 import { Contact } from "@/components/Contact";
 

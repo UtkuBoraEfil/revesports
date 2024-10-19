@@ -44,6 +44,7 @@ export function BlogPart(props: BlogProps) {
             <p>{props.author}</p>
         </div>
       </div>
+      
     </Link>
   );
 }
