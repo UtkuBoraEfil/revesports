@@ -22,6 +22,7 @@ export const InfiniteMovingCards = ({
   useEffect(() => {
     addAnimation();
   }, []);
+
   const [start, setStart] = useState(false);
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
@@ -65,30 +66,28 @@ export const InfiniteMovingCards = ({
       }
     }
   };
+
   return (
     <div
       ref={containerRef}
-      className={cn(
-        "  overflow-hidden ",
-        className
-      )}
+      className={cn("overflow-hidden", className)}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          " flex min-w-full gap-6  w-max flex-nowrap",
-          start && "animate-scroll ",
+          "flex min-w-full gap-6 w-max flex-nowrap",
+          start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
         {items.map((item, idx) => (
           <li
-            className=" max-w-full  "
+            className="max-w-full"
             key={idx}
           >
             <blockquote className="flex items-center gap-6">
-                <div className="md:w-4 md:h-4 w-2 h-2 bg-default-black rotate-45"></div>
-              <span className=" relative z-20 leading-[38px]  text-default-black md:text-4xl text-2xl ">
+              <div className="md:w-4 md:h-4 w-2 h-2 bg-default-black rotate-45"></div>
+              <span className="relative z-20 leading-[38px]text-default-black md:text-4xl text-2xl text-black">
                 {item}
               </span>
             </blockquote>
