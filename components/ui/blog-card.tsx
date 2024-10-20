@@ -4,7 +4,6 @@ import Link from "next/link";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -32,7 +31,7 @@ export function BlogCard(props: BlogProps) {
           <CardHeader className="p-0 overflow-hidden mb-4">
             <CardTitle>
               <div className="w-full relative">
-                <div className="absolute rounded-full px-2 py-0.5 text-xs text-default-white bg-default-black top-2 left-2">
+                <div className="absolute rounded-full px-2 py-0.5 text-xs text-default-white bg-default-black top-2 left-2 z-[1]">
                   {props.category}
                 </div>
                 <div className="relative aspect-video overflow-hidden before:absolute before:inset-0 before:rounded-t-md before:bg-gradient-to-t before:from-default-black/50 before:-bottom-10 before:to-transparent before:z-[1]">
