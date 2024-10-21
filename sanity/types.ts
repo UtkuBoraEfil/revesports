@@ -68,6 +68,52 @@ export type Geopoint = {
   alt?: number;
 };
 
+export type Application = {
+  _id: string;
+  _type: "application";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: string;
+  gender?: "male" | "female" | "other";
+  dob?: string;
+  height?: number;
+  phone?: string;
+  education?: string;
+  position?: "Setter (S)" | "Outside Hitter (OH)" | "Opposite Hitter (Opp or RS)" | "Libero (L)" | "Middle Blocker (MB or MH)";
+  clubExperience?: {
+    hasExperience?: boolean;
+    details?: Array<{
+      teamName?: string;
+      yearsPlayed?: number;
+      _key: string;
+    }>;
+  };
+  nationalTeamExperience?: {
+    hasExperience?: boolean;
+    details?: Array<{
+      teamName?: string;
+      year?: number;
+      _key: string;
+    }>;
+  };
+  langExams?: {
+    hasExam?: boolean;
+    details?: Array<{
+      examName?: "TOEFL" | "IELTS" | "SAT" | "ACT" | "Duolingo";
+      score?: number;
+      _key: string;
+    }>;
+  };
+  highlightVideo?: {
+    hasVideo?: boolean;
+    details?: Array<{
+      url?: string;
+      _key: string;
+    }>;
+  };
+};
+
 export type Contact = {
   _id: string;
   _type: "contact";
@@ -290,7 +336,7 @@ export type SanityImageMetadata = {
   isOpaque?: boolean;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Contact | Post | Author | Category | Slug | BlockContent | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Application | Contact | Post | Author | Category | Slug | BlockContent | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: sanity/lib/queries.ts
 // Variable: POSTS_QUERY
