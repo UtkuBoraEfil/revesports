@@ -10,7 +10,7 @@ export function SectionsSidebar({ active = "Revesport" }: { active?: string }) {
         if (text === active) {
           return (
             <div
-              key={index}
+              key={`${text}-${index}-${active}`}
               className="flex gap-4 items-center"
             >
               <div className="w-2 h-2 bg-default-white rotate-45"></div>

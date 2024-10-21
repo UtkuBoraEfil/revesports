@@ -77,7 +77,7 @@ export function RevesportCarouselSlider() {
         className="w-full"
       >
         {carouselSwiperItems.map((item, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={`${item.year}-${index}`}>
             <RevesportCarouselSliderCard
               title={item.title}
               year={item.year}
