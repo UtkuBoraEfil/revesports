@@ -5,6 +5,8 @@ import { Footer } from "@/components/layouts/footer";
 import { Navbar } from "@/components/layouts/navbar";
 import { impact } from "@/app/fonts/fonts";
 
+import { Toaster } from "sonner";
+
 export const metadata: Metadata = {
   title: "Revesports",
   description: "@Revesports",
@@ -20,6 +22,10 @@ export default function RootLayout({
       <body
         className={`bg-default-black text-default-white ${impact.className}`}
       >
+        <Toaster
+          richColors
+          position="top-center"
+        />
         <Navbar />
         {children}
         <Footer />

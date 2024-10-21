@@ -33,19 +33,7 @@ export function Footer() {
         </div>
         <div className="flex md:gap-12 gap-4 justify-center sm:justify-start">
           <Link
-            href=""
-            className="footer-links-animation"
-          >
-            ABOUT
-          </Link>
-          <Link
-            href=""
-            className="footer-links-animation"
-          >
-            SERVICES
-          </Link>
-          <Link
-            href=""
+            href="/apply"
             className="footer-links-animation"
           >
             APPLY

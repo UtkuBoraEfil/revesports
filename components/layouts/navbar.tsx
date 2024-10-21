@@ -9,19 +9,23 @@ export function Navbar() {
         <Link href={"/"}>REVESPORT</Link>
       </h2>
       <div className="hidden md:flex md:gap-9 gap-2 text-[#F5F5F580]">
-        {navbarLinks.map((links) => (
+        {navbarLinks.map((links, idx) => (
           <Link
-            href={links.href}
             key={`${links.name}-${links.href}`}
+            href={links.href}
             className="footer-links-animation hover:text-default-white uppercase"
           >
             {links.name}
           </Link>
         ))}
       </div>
-      <button className="hidden md:block bg-default-white text-default-black py-2 px-6 rounded-3xl">
-        <Link href={"/apply"}>APPLY</Link>
-      </button>
+
+      <Link
+        href={"/apply"}
+        className="hidden md:block bg-default-white text-default-black py-2 px-6 rounded-3xl"
+      >
+        APPLY NOW
+      </Link>
       <div className="block md:hidden">
         <MobileNavbar />
       </div>
