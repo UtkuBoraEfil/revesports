@@ -14,7 +14,7 @@ export default async function Page({ params }: PostIndexProps) {
   if (!blog) notFound();
 
   return (
-    <section className="bg-default-black text-white pt-20 min-[1280px]:pt-32 py-12">
+    <section className="bg-default-black text-white pt-32 min-[1280px]:pt-40 py-12">
       <Blog {...blog} />
     </section>
   );
