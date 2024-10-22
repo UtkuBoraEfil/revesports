@@ -102,7 +102,7 @@ export function ApplyFormCard() {
         >
           <Button
             disabled={isCreatePending}
-            className="w-full !bg-default-white text-default-black"
+            className="w-full !bg-default-white text-default-black text-base"
           >
             {isCreatePending && (
               <Loader

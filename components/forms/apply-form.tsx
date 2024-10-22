@@ -66,6 +66,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
               <FormLabel>Name</FormLabel>
               <FormControl>
                 <Input
+                  className="text-base"
                   placeholder="John Doe"
                   {...field}
                 />
@@ -87,15 +88,18 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
               >
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select gender" />
+                    <SelectValue
+                      placeholder="Select gender"
+                      className="text-base"
+                    />
                   </SelectTrigger>
                 </FormControl>
-                <SelectContent>
+                <SelectContent className="text-base">
                   {GENDERS.map((gender) => (
                     <SelectItem
                       key={gender}
                       value={gender}
-                      className={`${roboto.className} font-bold`}
+                      className={`${roboto.className} font-bold text-base`}
                     >
                       {gender.charAt(0).toUpperCase() + gender.slice(1)}
                     </SelectItem>
@@ -136,16 +140,6 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
                   className="w-auto p-0 text-base"
                   align="start"
                 >
-                  {/* <Calendar
-                      mode="single"
-                      className={`${roboto.className} text-default-black`}
-                      selected={field.value}
-                      onSelect={field.onChange}
-                      disabled={(date) =>
-                        date > new Date() || date < new Date("1900-01-01")
-                      }
-                      initialFocus
-                    /> */}
                   <Calendar
                     mode="single"
                     className={`${roboto.className} text-default-black`}
@@ -193,6 +187,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
               <FormLabel>Height (cm)</FormLabel>
               <FormControl>
                 <Input
+                  className="text-base"
                   type="number"
                   {...field}
                   onChange={(e) => field.onChange(Number(e.target.value))}
@@ -210,7 +205,10 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
             <FormItem>
               <FormLabel>Education</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input
+                  className="text-base"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -237,7 +235,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
                     <SelectItem
                       key={position}
                       value={position}
-                      className={`${roboto.className} font-bold`}
+                      className={`${roboto.className} font-bold text-base`}
                     >
                       {position}
                     </SelectItem>
@@ -288,7 +286,10 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
                     <FormItem>
                       <FormLabel>Team Name</FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Input
+                          className="text-base"
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -303,6 +304,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
                       <FormControl>
                         <Input
                           type="number"
+                          className="text-base"
                           {...field}
                           onChange={(e) =>
                             field.onChange(Number(e.target.value))
@@ -404,6 +406,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
                       <FormLabel>Year</FormLabel>
                       <FormControl>
                         <Input
+                          className="text-base"
                           type="number"
                           {...field}
                           onChange={(e) =>
@@ -524,6 +527,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
                       <FormLabel>Score</FormLabel>
                       <FormControl>
                         <Input
+                          className="text-base"
                           type="number"
                           {...field}
                           onChange={(e) =>
@@ -612,6 +616,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
                       <FormControl>
                         <Input
                           type="url"
+                          className="text-base"
                           placeholder="https://example.com/video"
                           {...field}
                         />
