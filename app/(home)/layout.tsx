@@ -8,6 +8,8 @@ import { impact } from "@/app/fonts/fonts";
 import { Toaster } from "sonner";
 import { siteConfig } from "@/config/site";
 
+import { Analytics } from "@vercel/analytics/react";
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -63,6 +65,7 @@ export default function RootLayout({
         />
         <Navbar />
         {children}
+        <Analytics />
         <Footer />
       </body>
     </html>
