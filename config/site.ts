@@ -6,7 +6,7 @@ export const siteConfig = {
   url:
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : "https://revesports.vercel.app",
+      : "https://www.reve-sport.com",
   links: {
     whatsapp: "https://github.com/ardaydilek",
     instagram: "https://github.com/ardaydilek",
