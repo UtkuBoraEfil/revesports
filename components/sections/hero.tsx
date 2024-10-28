@@ -13,11 +13,11 @@ export function Hero() {
           <h1 className="lg:text-[156px] md:text-[120px] sm:text-7xl text-6xl text-center lg:leading-[148px] md:leading-[120px]">
             REVESPORT
             <br />
-            TURN YOUR
+            HAYALLERİNİ
             <br />
-            DREAMS INTO
+            GERÇEĞE
             <br />
-            REALITY.
+            DÖNÜŞTÜR.
           </h1>
           <div className="absolute -bottom-20 w-full flex justify-center z-[1]">
             <button className="arrow-down w-[72px] h-[125px] grid place-items-center">

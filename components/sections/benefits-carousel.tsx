@@ -11,13 +11,13 @@ export function BenefitsCarousel() {
             <div className="bg-default-black rotate-45 size-1.5" />
             <p className={`${roboto.className} font-bold`}>01/04</p>
           </div>
-          <h2 className="lg:text-8xl text-6xl">
-            ELEVATE YOUR SKILLS WITH COLLOGE VOLLEYBALL.
+          <h2 className="lg:text-8xl md:text-6xl text-4xl">
+            KOLEJ VOLEYBOLU İLE YETENEKLERİNİZİ GELİŞTİRİN.
           </h2>
         </div>
         <div className="flex w-full justify-between items-end gap-5">
           <p className="font-roboto text-sm lg:text-base">
-            Dreaming of playing volleyball and studying in the US?
+            ABD'de voleybol oynamayı ve okumayı mı hayal ediyorsunuz?
           </p>
           <h2 className="lg:text-8xl text-6xl">R.</h2>
         </div>

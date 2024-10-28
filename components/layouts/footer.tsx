@@ -11,7 +11,7 @@ export function Footer() {
     <footer className="py-16 md:px-14 px-6 flex flex-col min-h-[45rem] h-full justify-between relative">
       <div className="flex flex-col gap-6 sm:gap-0 sm:flex-row justify-between lg:text-3xl text-2xl">
         <div className="flex flex-col gap-3 items-center sm:items-stretch">
-          <h2>SOCIAL MEDIA</h2>
+          <h2>SOSYAL MEDYA</h2>
           <div className="flex gap-3">
             <Link
               className="bg-default-white rounded-full p-2 size-10 hover:bg-default-black hover:fill-white transition-colors duration-300"
@@ -36,7 +36,7 @@ export function Footer() {
             href="/apply"
             className="footer-links-animation"
           >
-            APPLY
+            BAŞVUR
           </Link>
         </div>
       </div>

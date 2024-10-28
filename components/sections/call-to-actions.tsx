@@ -4,16 +4,16 @@ export function CallToActions() {
   return (
     <section>
       <CallToActionItem
-        title="MOST UPDATED"
-        text="All information and data presented in the service is most up to date"
+        title="EN GÜNCEL"
+        text="Hizmette sunulan tüm bilgi ve veriler en güncel bilgilerdir"
       />
       <CallToActionItem
-        title="VERIFIED SERVICE"
-        text="Our platform provides services that are official and verified by various parties"
+        title="DOĞRULANMIŞ HİZMET"
+        text="Platformumuz, çeşitli taraflarca resmi ve doğrulanmış hizmetler sunmaktadır"
       />
       <CallToActionItem
-        title="FASTEST"
-        text="We will get back to you as soon as possible"
+        title="HIZLI GERİ DÖNÜŞ"
+        text="Size mümkün olan en kısa sürede geri döneceğiz"
       />
     </section>
   );

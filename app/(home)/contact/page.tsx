@@ -9,7 +9,7 @@ export default function Page({}) {
       <div className="flex flex-col md:flex-row gap-12 md:gap-4 justify-between items-end">
         <div className="flex flex-col gap-8 w-full">
           <h1 className="text-5xl font-bold">
-            Let&apos;s discuss what's on your mind 👋
+            Aklınızdan geçenleri tartışalım 👋
           </h1>
 
           <ContactFormCard />

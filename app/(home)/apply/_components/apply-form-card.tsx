@@ -28,34 +28,39 @@ export function ApplyFormCard() {
     obj: ScholarshipFormSchema
   ): ScholarshipFormSchema {
     if (Array.isArray(obj)) {
+      if (obj.length === 0 || typeof obj[0] !== "object") {
+        return obj;
+      }
       // @ts-ignore
       return obj.map((item) => ({
         ...item,
         _key: nanoid(),
       }));
     } else if (obj instanceof Date) {
-      // @ts-ignore
-      return obj.toISOString();
+      return obj.toISOString() as any;
     } else if (typeof obj === "object" && obj !== null) {
       const newObj: any = {};
       for (const key in obj) {
         // @ts-ignore
-        newObj[key] = addKeysToArrayItems(obj[key]);
+        newObj[key] = addKeysToArrayItems(obj[key] as any);
       }
       return newObj;
     }
     return obj;
   }
+
   const form = useForm<z.infer<typeof scholarshipFormSchema>>({
     resolver: zodResolver(scholarshipFormSchema),
     defaultValues: {
       name: "",
-      gender: "male",
+      email: "",
+      instagramUsername: "",
+      gender: "kadın",
       dob: new Date(),
       height: 170,
       phone: "",
       education: "",
-      position: "Setter (S)",
+      positions: [],
       clubExperience: { hasExperience: false, details: [] },
       nationalTeamExperience: { hasExperience: false, details: [] },
       langExams: { hasExam: false, details: [] },
@@ -80,8 +85,8 @@ export function ApplyFormCard() {
 
       form.reset();
 
-      toast.success(`Thanks ${input.name}`, {
-        description: "Your application has been sent!",
+      toast.success(`Teşekkürler ${input.name}`, {
+        description: "Başvurunuz bize ulaştı! En kısa sürede dönüş yapacağız.",
       });
     });
   }
@@ -89,9 +94,9 @@ export function ApplyFormCard() {
   return (
     <Card className="w-full bg-default-black text-default-white">
       <CardHeader>
-        <CardTitle className="text-3xl">Apply now!</CardTitle>
+        <CardTitle className="text-3xl">Hemen başvur!</CardTitle>
         <CardDescription className="text-lg">
-          You can ask anything you want to know..
+          Hayallerini gerçekleştirmek için son adım...
         </CardDescription>
       </CardHeader>
 
@@ -110,7 +115,7 @@ export function ApplyFormCard() {
                 aria-hidden="true"
               />
             )}
-            Submit
+            Gönder
           </Button>
         </ApplyForm>
       </CardContent>

@@ -15,8 +15,8 @@ export function HeroInfiniteCards() {
 }
 
 const quotes = [
-  "YOU CAN DO IT",
-  "VOLLEYBALL SCHOLARSHIP",
-  "MAKE SPORTS AS A FUN HOBBY",
-  "BOTH PHYSICALLY AND SPIRITUALLY",
+  "YAPABİLİRSİN",
+  "VOLEYBOL BURSU",
+  "EĞLENCENİZİ MESLEK HÂLİNE GETİRİN",
+  "HEM FİZİKSEL HEM DE RUHSAL OLARAK",
 ];

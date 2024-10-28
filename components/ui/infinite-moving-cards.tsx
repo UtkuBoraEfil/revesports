@@ -83,7 +83,7 @@ export const InfiniteMovingCards = ({
         {items.map((item, idx) => (
           <li
             className="max-w-full"
-            key={`${item}-${idx}`}
+            key={`${item}-${idx}-carousel`}
           >
             <blockquote className="flex items-center gap-6">
               <div className="md:w-4 md:h-4 w-2 h-2 bg-default-black rotate-45"></div>

@@ -1,6 +1,7 @@
 import { roboto } from "@/app/fonts/fonts";
 import { RevesportCarouselSlider } from "@/components/ui/revesport-carousel-swiper";
 import { SectionsSidebar } from "../ui/sections-sidebar";
+import { HighlightVideoText } from "./highlight-video-text";
 
 export function RevesportCarousel() {
   return (
@@ -9,23 +10,27 @@ export function RevesportCarousel() {
       id="carousel"
     >
       <div className="flex flex-col md:flex-row lg:gap-20 gap-10 mb-8 lg:mb-0">
-        <SectionsSidebar active="Revesport" />
+        <SectionsSidebar
+          active="Revesport"
+          from="Revesport"
+        />
         <div className="flex flex-col gap-6 lg:gap-8 max-w-[660px]">
-          <h2 className="lg:text-8xl text-6xl leading-none">
-            WHAT IS <br /> REVESPORT?
+          <h2 className="lg:text-8xl sm:text-6xl text-4xl leading-none">
+            REVESPORT <br /> NEDİR?
           </h2>
           <p className={`opacity-60 text-sm md:text-base ${roboto.className}`}>
-            ReveSport is a personal development startup that aims to turn your
-            dreams into reality in the world of sport. ReveSport, born from the
-            combination of the French words &apos;rêve&apos; (dream) and
-            &apos;sport&apos; (sport), offers personalised solutions for
-            athletes to maximise their success. It provides you with the chance
-            to pursue both an academic career and an athletic career in America
-            by identifying schools that match your language abilities, academic
-            achievements and talents.
+            ReveSport, spor dünyasında hayallerinizi gerçeğe dönüştürmeyi
+            hedefleyen bir kişisel gelişim girişimidir. İsmini Fransızca "rêve"
+            (hayal) ve "sport" (spor) kelimelerinin birleşiminden alan
+            ReveSport, sporcuların başarılarını en üst düzeye çıkarmaları için
+            kişiye özel çözümler sunar. Dil yeteneklerinize, akademik
+            başarılarınıza ve yeteneklerinize uygun okulları belirleyerek,
+            Amerika’da hem akademik kariyerinizi hem de sportif kariyerinizi
+            sürdürme şansı sağlar.
           </p>
         </div>
       </div>
+      <HighlightVideoText />
 
       <RevesportCarouselSlider />
     </section>

@@ -63,11 +63,48 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>İsim</FormLabel>
               <FormControl>
                 <Input
                   className="text-base"
-                  placeholder="John Doe"
+                  placeholder="Yaren Deniz"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Email</FormLabel>
+              <FormControl>
+                <Input
+                  type="email"
+                  className="text-base"
+                  placeholder="senin.emailin@gmail.com"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="instagramUsername"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Instagram Kullanıcı Adı</FormLabel>
+              <FormControl>
+                <Input
+                  className="text-base"
+                  placeholder="@kullanıcıadı"
                   {...field}
                 />
               </FormControl>
@@ -81,7 +118,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
           name="gender"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Gender</FormLabel>
+              <FormLabel>Cinsiyet</FormLabel>
               <Select
                 onValueChange={field.onChange}
                 defaultValue={field.value}
@@ -89,7 +126,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
                 <FormControl>
                   <SelectTrigger>
                     <SelectValue
-                      placeholder="Select gender"
+                      placeholder="Cinsiyet Seçin"
                       className="text-base"
                     />
                   </SelectTrigger>
@@ -116,7 +153,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
           name="dob"
           render={({ field }) => (
             <FormItem className="flex flex-col">
-              <FormLabel>Date of birth</FormLabel>
+              <FormLabel>Doğum Tarihi</FormLabel>
               <Popover>
                 <PopoverTrigger asChild>
                   <FormControl>
@@ -130,7 +167,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
                       {field.value ? (
                         format(field.value, "PPP")
                       ) : (
-                        <span>Pick a date</span>
+                        <span>Tarih Seç</span>
                       )}
                       <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                     </Button>
@@ -164,13 +201,13 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
           name="phone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Phone</FormLabel>
+              <FormLabel>Telefon</FormLabel>
               <FormControl>
                 <PhoneInput
                   required
                   disabled={false}
                   defaultCountry="TR"
-                  placeholder={"Enter your phone number"}
+                  placeholder={"551 123 4567"}
                   {...field}
                 />
               </FormControl>
@@ -189,6 +226,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
                 <Input
                   className="text-base"
                   type="number"
+                  min={0}
                   {...field}
                   onChange={(e) => field.onChange(Number(e.target.value))}
                 />
@@ -203,7 +241,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
           name="education"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Education</FormLabel>
+              <FormLabel>Eğitim Bilgileri</FormLabel>
               <FormControl>
                 <Input
                   className="text-base"
@@ -217,31 +255,32 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
 
         <FormField
           control={form.control}
-          name="position"
+          name="positions"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Position</FormLabel>
-              <Select
-                onValueChange={field.onChange}
-                defaultValue={field.value}
-              >
-                <FormControl>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select position" />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent>
+              <FormLabel>Oynadığınız Pozisyonlar</FormLabel>
+              <FormControl>
+                <div className="flex flex-wrap gap-2">
                   {POSITIONS.map((position) => (
-                    <SelectItem
+                    <label
                       key={position}
-                      value={position}
-                      className={`${roboto.className} font-bold text-base`}
+                      className="flex items-center space-x-2"
                     >
-                      {position}
-                    </SelectItem>
+                      <Checkbox
+                        checked={field.value?.includes(position)}
+                        onCheckedChange={(checked) => {
+                          const updatedPositions = checked
+                            ? [...(field.value || []), position]
+                            : field.value?.filter((val) => val !== position) ||
+                              [];
+                          field.onChange(updatedPositions);
+                        }}
+                      />
+                      <span>{position}</span>
+                    </label>
                   ))}
-                </SelectContent>
-              </Select>
+                </div>
+              </FormControl>
               <FormMessage />
             </FormItem>
           )}
@@ -251,7 +290,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
           control={form.control}
           name="clubExperience.hasExperience"
           render={({ field }) => (
-            <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+            <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border-default-white border-2 p-4">
               <FormControl>
                 <Checkbox
                   checked={field.value}
@@ -263,9 +302,13 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
                 />
               </FormControl>
               <div className="space-y-1 leading-none">
-                <FormLabel>Club Experience</FormLabel>
+                <FormLabel>Takım Deneyimi</FormLabel>
                 <FormDescription>
-                  Do you have any club experience?
+                  Takım deneyiminiz var mı?{" "}
+                  <span className="text-[10px] text-red-500">
+                    (Var olarak işaretlerseniz butona tıklayarak ayrıntıları
+                    eklemeniz gerekir)
+                  </span>
                 </FormDescription>
               </div>
             </FormItem>
@@ -277,14 +320,14 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
             {form.watch("clubExperience.details")?.map((_, index) => (
               <div
                 key={index}
-                className="space-y-4"
+                className="space-y-2"
               >
                 <FormField
                   control={form.control}
                   name={`clubExperience.details.${index}.teamName`}
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Team Name</FormLabel>
+                      <FormLabel>Takım Adı</FormLabel>
                       <FormControl>
                         <Input
                           className="text-base"
@@ -300,11 +343,12 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
                   name={`clubExperience.details.${index}.yearsPlayed`}
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Years Played</FormLabel>
+                      <FormLabel>Kaç Yıl Oynadınız?</FormLabel>
                       <FormControl>
                         <Input
                           type="number"
                           className="text-base"
+                          min={0}
                           {...field}
                           onChange={(e) =>
                             field.onChange(Number(e.target.value))
@@ -319,6 +363,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
                   type="button"
                   variant="destructive"
                   size="sm"
+                  className="mb-4 inline-block"
                   onClick={() => {
                     const currentDetails = form.getValues(
                       "clubExperience.details"
@@ -337,7 +382,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
               type="button"
               variant="outline"
               size="sm"
-              className="mt-2 text-default-black"
+              className="text-default-black"
               onClick={() => {
                 const currentDetails =
                   form.getValues("clubExperience.details") || [];
@@ -348,7 +393,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
               }}
             >
               <Plus className="mr-2 h-4 w-4" />
-              Add Club Experience
+              Takım Deneyimi Ekle
             </Button>
           </div>
         )}
@@ -357,7 +402,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
           control={form.control}
           name="nationalTeamExperience.hasExperience"
           render={({ field }) => (
-            <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+            <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border-2 border-default-white p-4">
               <FormControl>
                 <Checkbox
                   checked={field.value}
@@ -369,9 +414,13 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
                 />
               </FormControl>
               <div className="space-y-1 leading-none">
-                <FormLabel>National Team Experience</FormLabel>
+                <FormLabel>Milli Takım Deneyimi</FormLabel>
                 <FormDescription>
-                  Do you have any national team experience?
+                  Milli takım deneyiminiz var mı?{" "}
+                  <span className="text-[10px] text-red-500">
+                    (Var olarak işaretlerseniz butona tıklayarak ayrıntıları
+                    eklemeniz gerekir)
+                  </span>
                 </FormDescription>
               </div>
             </FormItem>
@@ -383,14 +432,14 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
             {form.watch("nationalTeamExperience.details")?.map((_, index) => (
               <div
                 key={index}
-                className="space-y-4"
+                className="space-y-2"
               >
                 <FormField
                   control={form.control}
                   name={`nationalTeamExperience.details.${index}.teamName`}
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>National Team Name</FormLabel>
+                      <FormLabel>Milli Takım Adı</FormLabel>
                       <FormControl>
                         <Input {...field} />
                       </FormControl>
@@ -403,11 +452,12 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
                   name={`nationalTeamExperience.details.${index}.year`}
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Year</FormLabel>
+                      <FormLabel>Yıl</FormLabel>
                       <FormControl>
                         <Input
                           className="text-base"
                           type="number"
+                          min={2000}
                           {...field}
                           onChange={(e) =>
                             field.onChange(Number(e.target.value))
@@ -422,6 +472,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
                   type="button"
                   variant="destructive"
                   size="sm"
+                  className="mb-4 inline-block"
                   onClick={() => {
                     const currentDetails = form.getValues(
                       "nationalTeamExperience.details"
@@ -440,7 +491,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
               type="button"
               variant="outline"
               size="sm"
-              className="mt-2 text-default-black"
+              className="text-default-black"
               onClick={() => {
                 const currentDetails =
                   form.getValues("nationalTeamExperience.details") || [];
@@ -451,7 +502,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
               }}
             >
               <Plus className="mr-2 h-4 w-4" />
-              Add National Team Experience
+              Milli Takım Deneyimi Ekle
             </Button>
           </div>
         )}
@@ -460,7 +511,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
           control={form.control}
           name="langExams.hasExam"
           render={({ field }) => (
-            <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+            <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border-2 border-default-white p-4">
               <FormControl>
                 <Checkbox
                   checked={field.value}
@@ -472,9 +523,13 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
                 />
               </FormControl>
               <div className="space-y-1 leading-none">
-                <FormLabel>Language Exams</FormLabel>
+                <FormLabel>Girdiğiniz Dil Sınavları</FormLabel>
                 <FormDescription>
-                  Have you taken any language exams?
+                  Girdiğiniz dil sınavı var mı?{" "}
+                  <span className="text-[10px] text-red-500">
+                    (Var olarak işaretlerseniz butona tıklayarak ayrıntıları
+                    eklemeniz gerekir)
+                  </span>
                 </FormDescription>
               </div>
             </FormItem>
@@ -483,24 +538,24 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
 
         {form.watch("langExams.hasExam") && (
           <div>
-            {form.watch("langExams.details")?.map((_, index) => (
+            {form.watch("langExams.details")?.map((detail, index) => (
               <div
                 key={index}
-                className="space-y-4"
+                className="space-y-2"
               >
                 <FormField
                   control={form.control}
                   name={`langExams.details.${index}.examName`}
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Exam Name</FormLabel>
+                      <FormLabel>Sınav İsmi</FormLabel>
                       <Select
                         onValueChange={field.onChange}
                         value={field.value}
                       >
                         <FormControl>
                           <SelectTrigger>
-                            <SelectValue placeholder="Select exam" />
+                            <SelectValue placeholder="Sınav Seç" />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
@@ -519,16 +574,38 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
                     </FormItem>
                   )}
                 />
+
+                {form.watch(`langExams.details.${index}.examName`) ===
+                  "Diğer" && (
+                  <FormField
+                    control={form.control}
+                    name={`langExams.details.${index}.otherExamName`}
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Belirtiniz</FormLabel>
+                        <FormControl>
+                          <Input
+                            className="text-base"
+                            placeholder="Sınav Adı"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                )}
                 <FormField
                   control={form.control}
                   name={`langExams.details.${index}.score`}
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Score</FormLabel>
+                      <FormLabel>Puan</FormLabel>
                       <FormControl>
                         <Input
                           className="text-base"
                           type="number"
+                          min={0}
                           {...field}
                           onChange={(e) =>
                             field.onChange(Number(e.target.value))
@@ -543,6 +620,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
                   type="button"
                   variant="destructive"
                   size="sm"
+                  className="mb-4 inline-block"
                   onClick={() => {
                     const currentDetails = form.getValues("langExams.details");
                     form.setValue(
@@ -559,7 +637,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
               type="button"
               variant="outline"
               size="sm"
-              className="mt-2 text-default-black"
+              className=" text-default-black"
               onClick={() => {
                 const currentDetails =
                   form.getValues("langExams.details") || [];
@@ -570,7 +648,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
               }}
             >
               <Plus className="mr-2 h-4 w-4" />
-              Add Language Exam
+              Dil Sınavı Ekle
             </Button>
           </div>
         )}
@@ -593,7 +671,11 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
               <div className="space-y-1 leading-none">
                 <FormLabel>Highlight Video</FormLabel>
                 <FormDescription>
-                  Do you have any highlight videos?
+                  Highlight videonuz var mı?{" "}
+                  <span className="text-[10px] text-red-500">
+                    (Var olarak işaretlerseniz videonun olduğu URL'yi girmeniz
+                    gerekir)
+                  </span>
                 </FormDescription>
               </div>
             </FormItem>
@@ -605,7 +687,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
             {form.watch("highlightVideo.details")?.map((_, index) => (
               <div
                 key={index}
-                className="space-y-4"
+                className="space-y-2"
               >
                 <FormField
                   control={form.control}
@@ -629,6 +711,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
                   type="button"
                   variant="destructive"
                   size="sm"
+                  className="mb-4 inline-block"
                   onClick={() => {
                     const currentDetails = form.getValues(
                       "highlightVideo.details"
@@ -647,7 +730,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
               type="button"
               variant="outline"
               size="sm"
-              className="mt-2 text-default-black"
+              className=" text-default-black"
               onClick={() => {
                 const currentDetails =
                   form.getValues("highlightVideo.details") || [];
@@ -658,7 +741,7 @@ export function ApplyForm({ form, onSubmit, children }: ApplyFormProps) {
               }}
             >
               <Plus className="mr-2 h-4 w-4" />
-              Add Highlight Video
+              Highlight Video Ekle
             </Button>
           </div>
         )}

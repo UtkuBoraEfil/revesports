@@ -53,7 +53,7 @@ export function MobileNavbar() {
               href={"/apply"}
               className=" bg-default-white text-default-black hover:bg-default-black hover:text-default-white border border-default-white transition-colors duration-300 px-6 py-2.5 rounded-3xl text-xl ms-2"
             >
-              APPLY
+              BAŞVUR
             </Link>
           </SheetClose>
         </div>

@@ -20,7 +20,7 @@ export const contactFormSchema = z.object({
 
 export type CreateContactFormScehma = z.infer<typeof contactFormSchema>;
 
-export const GENDERS = ["male", "female", "other"] as const;
+export const GENDERS = ["erkek", "kadın", "diğer"] as const;
 export const POSITIONS = [
   "Setter (S)",
   "Outside Hitter (OH)",
@@ -28,7 +28,14 @@ export const POSITIONS = [
   "Libero (L)",
   "Middle Blocker (MB or MH)",
 ] as const;
-export const LANG_EXAMS = ["TOEFL", "IELTS", "SAT", "ACT", "Duolingo"] as const;
+export const LANG_EXAMS = [
+  "TOEFL",
+  "IELTS",
+  "SAT",
+  "ACT",
+  "Duolingo",
+  "Diğer",
+] as const;
 
 export const scholarshipFormSchema = z.object({
   name: z
@@ -41,6 +48,20 @@ export const scholarshipFormSchema = z.object({
     })
     .max(50, {
       message: "Name must be at most 50 character",
+    }),
+  email: z
+    .string({
+      required_error: "Email is required",
+    })
+    .email({
+      message: "Please enter a valid email address",
+    }),
+  instagramUsername: z
+    .string({
+      required_error: "Instagram username is required",
+    })
+    .min(1, {
+      message: "Instagram username is required",
     }),
   gender: z.enum(GENDERS),
   dob: z.date({
@@ -55,7 +76,10 @@ export const scholarshipFormSchema = z.object({
   education: z.string({
     required_error: "An education is required.",
   }),
-  position: z.enum(POSITIONS),
+  // position: z.enum(POSITIONS),
+  positions: z
+    .array(z.enum(POSITIONS))
+    .min(1, { message: "At least one position must be selected" }),
   clubExperience: z
     .object({
       hasExperience: z.boolean({
@@ -126,19 +150,37 @@ export const scholarshipFormSchema = z.object({
       details: z.array(
         z.object({
           examName: z.enum(LANG_EXAMS),
+          otherExamName: z.string().optional(),
           score: z.number({
             required_error: "Exam score is required",
           }),
         })
       ),
     })
-    .refine((input) => {
-      if (input?.hasExam && input?.details?.length === 0) {
-        return false;
+    .refine(
+      (input) => {
+        if (input?.hasExam && input?.details?.length === 0) {
+          return false;
+        }
+        return true;
+      },
+      {
+        message: "Language exam details are required if exams are indicated",
       }
-      return true;
-    }),
-
+    )
+    .refine(
+      (input) => {
+        if (input?.hasExam) {
+          return input.details.every(
+            (detail) => detail.examName !== "Diğer" || detail.otherExamName
+          );
+        }
+        return true;
+      },
+      {
+        message: "Please specify the other exam name",
+      }
+    ),
   highlightVideo: z.object({
     hasVideo: z.boolean({
       required_error: "Highlight video is required",

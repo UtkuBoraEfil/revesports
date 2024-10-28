@@ -31,10 +31,10 @@ export function ContactForm({ form, onSubmit, children }: ContactFormProps) {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Full Name</FormLabel>
+              <FormLabel>İsim</FormLabel>
               <FormControl>
                 <Input
-                  placeholder="John Doe"
+                  placeholder="Yaren Deniz"
                   className="text-base"
                   {...field}
                 />
@@ -51,7 +51,7 @@ export function ContactForm({ form, onSubmit, children }: ContactFormProps) {
               <FormLabel>Email</FormLabel>
               <FormControl>
                 <Input
-                  placeholder="your@email.com"
+                  placeholder="senin@gmail.com"
                   className="text-base"
                   {...field}
                 />
@@ -65,10 +65,10 @@ export function ContactForm({ form, onSubmit, children }: ContactFormProps) {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel>Mesaj</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Your message"
+                  placeholder="Mesajınız"
                   className="text-base"
                   {...field}
                 />

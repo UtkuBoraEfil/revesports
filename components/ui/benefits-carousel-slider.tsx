@@ -14,28 +14,19 @@ export function BenefitsCarouselSlider() {
       modules={[Navigation]}
       className="w-full relative"
     >
-      <SwiperSlide>
-        <div className="overflow-hidden aspect-square relative before:absolute before:bg-black/50 before:opacity-50 before:inset-0 before:z-[1]">
-          <Image
-            src="/images/section1.jpg"
-            alt="volleyball"
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="w-full h-full object-cover object-center"
-          />
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="overflow-hidden aspect-square relative before:absolute before:bg-black/50 before:opacity-50 before:inset-0 before:z-[1]">
-          <Image
-            src="/images/section1.jpg"
-            alt="volleyball"
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="w-full h-full object-cover object-center"
-          />
-        </div>
-      </SwiperSlide>
+      {Array.from({ length: 4 }).map((_, index) => (
+        <SwiperSlide key={index}>
+          <div className="overflow-hidden aspect-square relative before:absolute before:bg-black/50 before:opacity-50 before:inset-0 before:z-[1]">
+            <Image
+              src={`/images/carousel-${index + 1}.jpg`}
+              alt="volleyball"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+        </SwiperSlide>
+      ))}
       <BenefistsCarouselSliderNavigation />
     </Swiper>
   );

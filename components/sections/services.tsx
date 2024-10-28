@@ -2,14 +2,18 @@ import Image from "next/image";
 import { ServicesBackground } from "../ui/services-background";
 import { SectionsSidebar } from "../ui/sections-sidebar";
 import { roboto } from "@/app/fonts/fonts";
+import Link from "next/link";
 
 export function Services() {
   return (
     <section className="py-12 md:pb-32">
       <div className="flex flex-col md:flex-row md:px-14 px-6 md:gap-20 gap-8 pb-10 md:pb-20">
-        <SectionsSidebar active="Services" />
-        <h2 className="lg:text-8xl text-6xl leading-none">
-          WHAT CAN REVESPORT <br /> OFFER YOU?
+        <SectionsSidebar
+          active="Services"
+          from="Services"
+        />
+        <h2 className="lg:text-8xl sm:text-6xl text-4xl leading-none">
+          REVESPORT <br /> SİZE NE SUNABİLİR?
         </h2>
       </div>
       <section className="w-full relative">
@@ -33,11 +37,17 @@ export function Services() {
               </div>
               <div className="max-w-[350px]">
                 <h2 className=" lg:text-4xl text-3xl pb-4">
-                  APPLY THROUGH FORM
+                  FORM ARACILIĞIYLA BAŞVURUN{" "}
+                  <Link
+                    href="/apply"
+                    className="text-sm underline"
+                  >
+                    buradan
+                  </Link>
                 </h2>
                 <p className={`opacity-60 text-base ${roboto.className}`}>
-                  We will get back to your form as soon as possible and evaluate
-                  your situation.
+                  Formunuza mümkün olan en kısa sürede geri dönerek durumunuzu
+                  değerlendireceğiz.
                 </p>
               </div>
             </div>
@@ -60,11 +70,11 @@ export function Services() {
                 </div>
                 <div className="max-w-[350px]">
                   <h2 className=" lg:text-4xl text-3xl pb-4">
-                    START TO PROCESS
+                    SÜRECE BAŞLAYALIM
                   </h2>
                   <p className={`opacity-60 text-base ${roboto.className}`}>
-                    Let&apos;s start a comprehensive counselling service,
-                    including a personalised video.
+                    Kişiselleştirilmiş bir video da dahil olmak üzere kapsamlı
+                    bir danışmanlık hizmeti başlatalım.
                   </p>
                 </div>
               </div>
@@ -86,9 +96,11 @@ export function Services() {
                 <p>03/03</p>
               </div>
               <div className="max-w-[350px]">
-                <h2 className=" lg:text-4xl text-3xl pb-4">DREAM COMES TRUE</h2>
+                <h2 className=" lg:text-4xl text-3xl pb-4">
+                  HAYALLERİNİZ GERÇEK OLUYOR
+                </h2>
                 <p className={`opacity-60 text-base ${roboto.className}`}>
-                  Now just enjoy the scholarship with the great education.
+                  Şimdi sadece harika bir eğitimle bursunuzun tadını çıkarın.
                 </p>
               </div>
             </div>

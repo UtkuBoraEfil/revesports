@@ -1,6 +1,6 @@
 export const navbarLinks = [
   {
-    name: "Home",
+    name: "Anasayfa",
     href: "/",
     type: "link",
   },
@@ -10,55 +10,55 @@ export const navbarLinks = [
     type: "link",
   },
   {
-    name: "Contact",
+    name: "İletişim",
     href: "/contact",
     type: "link",
   },
 ];
 
-export const sectionSidebarTexts = ["Revesport", "Services", "The Reason"];
+export const sectionSidebarTexts = ["Revesport", "Hizmetlerimiz", "Misyonumuz"];
 
 export const carouselSwiperItems = [
   {
-    title: "Volleyball Scholarship",
+    title: "Voleybol Bursu",
     year: "2024",
     city: "California",
-    skills: ["Strategy", "Agility"],
-    image: "/images/volleyball.jpg",
+    skills: ["Strateji", "Çeviklik"],
+    image: "/images/carousel-2.jpg",
   },
   {
-    title: "Academic Improvement",
+    title: "Akademik Gelişim",
     year: "2022",
     city: "USA",
-    skills: ["Strategy", "Power"],
+    skills: ["Strateji", "Power"],
     image: "/images/academic.jpg",
   },
   {
-    title: "Social Activities",
+    title: "Sosyal Etkinlikler",
     year: "2020",
     city: "USA",
-    skills: ["Agility", "Speed"],
-    image: "/images/social.jpg",
+    skills: ["Çeviklik", "Hız"],
+    image: "/images/carousel-4.jpg",
   },
   {
-    title: "Volleyball Scholarship",
+    title: "Voleybol Bursu",
     year: "2024",
     city: "California",
-    skills: ["Strategy", "Agility"],
-    image: "/images/volleyball.jpg",
+    skills: ["Strateji", "Çeviklik"],
+    image: "/images/carousel-3.jpg",
   },
   {
-    title: "Academic Improvement",
+    title: "Akademik Gelişim",
     year: "2022",
     city: "USA",
-    skills: ["Strategy", "Power"],
+    skills: ["Strateji", "Güç"],
     image: "/images/academic.jpg",
   },
   {
-    title: "Social Activities",
+    title: "Sosyal Etkinlikler",
     year: "2020",
     city: "USA",
-    skills: ["Agility", "Speed"],
-    image: "/images/social.jpg",
+    skills: ["Çeviklik", "Hız"],
+    image: "/images/carousel-4.jpg",
   },
 ];

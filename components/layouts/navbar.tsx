@@ -30,7 +30,7 @@ export function Navbar() {
         href={"/apply"}
         className="hidden md:block bg-default-white text-default-black py-2 px-6 rounded-3xl"
       >
-        APPLY NOW
+        BAŞVUR
       </Link>
       <div className="block md:hidden">
         <MobileNavbar />

@@ -47,8 +47,8 @@ export function ContactFormCard() {
 
       form.reset();
 
-      toast.success(`Thanks ${input.name}`, {
-        description: "Your message has been sent!",
+      toast.success(`Teşekkürler ${input.name}`, {
+        description: "Mesajın bize ulaştı! En kısa sürede dönüş yapacağız.",
       });
     });
   }
@@ -56,9 +56,9 @@ export function ContactFormCard() {
   return (
     <Card className="max-w-3xl w-full bg-default-black text-default-white">
       <CardHeader>
-        <CardTitle className="text-lg">Reach us!</CardTitle>
+        <CardTitle className="text-lg">Bize ulaşın!</CardTitle>
         <CardDescription>
-          You can ask anything you want to know..
+          Bilmek istediğin her şeyi sorabilirsin.
         </CardDescription>
       </CardHeader>
 
@@ -77,7 +77,7 @@ export function ContactFormCard() {
                 aria-hidden="true"
               />
             )}
-            Submit
+            Gönder
           </Button>
         </ContactForm>
       </CardContent>

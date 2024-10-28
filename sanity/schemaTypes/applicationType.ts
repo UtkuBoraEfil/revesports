@@ -13,10 +13,18 @@ export const applicationType = defineType({
       type: "string",
     }),
     defineField({
+      name: "email",
+      type: "string",
+    }),
+    defineField({
+      name: "instagramUsername",
+      type: "string",
+    }),
+    defineField({
       name: "gender",
       type: "string",
       options: {
-        list: ["male", "female", "other"],
+        list: ["erkek", "kadın", "diğer"],
       },
     }),
     defineField({
@@ -36,17 +44,24 @@ export const applicationType = defineType({
       type: "string",
     }),
     defineField({
-      name: "position",
-      type: "string",
-      options: {
-        list: [
-          "Setter (S)",
-          "Outside Hitter (OH)",
-          "Opposite Hitter (Opp or RS)",
-          "Libero (L)",
-          "Middle Blocker (MB or MH)",
-        ],
-      },
+      name: "positions",
+      title: "Positions",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "string",
+          options: {
+            list: [
+              "Setter (S)",
+              "Outside Hitter (OH)",
+              "Opposite Hitter (Opp or RS)",
+              "Libero (L)",
+              "Middle Blocker (MB or MH)",
+            ],
+          },
+        }),
+      ],
+      validation: (Rule) => Rule.required().min(1),
     }),
     defineField({
       name: "clubExperience",
@@ -113,8 +128,12 @@ export const applicationType = defineType({
                   name: "examName",
                   type: "string",
                   options: {
-                    list: ["TOEFL", "IELTS", "SAT", "ACT", "Duolingo"],
+                    list: ["TOEFL", "IELTS", "SAT", "ACT", "Duolingo", "Other"],
                   },
+                }),
+                defineField({
+                  name: "otherExamName",
+                  type: "string",
                 }),
                 defineField({ name: "score", type: "number" }),
               ],
@@ -147,7 +166,13 @@ export const applicationType = defineType({
   preview: {
     select: {
       title: "name",
-      subtitle: "position",
+      subtitle: "positions",
+    },
+    prepare({ title, subtitle }) {
+      return {
+        title,
+        subtitle: Array.isArray(subtitle) ? subtitle.join(", ") : subtitle,
+      };
     },
   },
 });

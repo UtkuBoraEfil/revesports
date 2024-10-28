@@ -8,28 +8,28 @@ export function Reason() {
         <div className="flex flex-col md:flex-row gap-10 lg:gap-16">
           <SectionsSidebar active="The Reason" />
           <div className="flex flex-col gap-8 ">
-            <h2 className="lg:text-8xl text-6xl leading-none">
-              THE REASONS THAT MAKE US THE BEST CHOICE.
+            <h2 className="lg:text-8xl sm:text-6xl text-4xl leading-none">
+              BİZİ EN İYİ YAPAN SEBEPLER.
             </h2>
             <p className={`opacity-60 ${roboto.className}`}>
-              As the founder of ReveSport, I have a deep experience as someone
-              who has personally experienced the process of coming to America
-              and currently continues his career as an active athlete in
-              America. I know very well the difficulties, opportunities and ways
-              to achieve success of being an athlete in America. I will be with
-              you in this process and I will be with you to guide your
-              professional and personal development in the best way and to bring
-              you together with the right people on this path. I will be with
-              you to realise your dream of becoming an athlete in America, to be
-              successful in this process, to discover yourself and to take steps
-              towards achieving your goals.
+              ReveSport’un kurucusu olarak, Amerika’ya gelme sürecini bizzat
+              yaşamış ve halen Amerika’da aktif bir sporcu olarak kariyerine
+              devam eden biri olarak derin bir deneyime sahibim. Amerika’da
+              sporcu olmanın zorluklarını, fırsatlarını ve başarıya ulaşma
+              yollarını çok iyi biliyorum. Bu süreçte yanınızda olacağım; hem
+              profesyonel hem de kişisel gelişiminizi en iyi şekilde
+              yönlendirmeniz ve bu yolda doğru insanlarla tanışmanız için
+              rehberlik edeceğim. Amerika’da sporcu olma hayalinizi
+              gerçekleştirmeniz, bu süreçte başarılı olmanız, kendinizi
+              keşfetmeniz ve hedeflerinize ulaşma yolunda adımlar atmanız için
+              yanınızda olacağım.
             </p>
           </div>
         </div>
         <div className="min-h-full w-full flex justify-end items-end ">
           <div>
             <button className=" bg-default-white text-default-black  px-6 py-3 rounded-3xl">
-              SEE MORE
+              DAHA FAZLASI
             </button>
           </div>
         </div>
