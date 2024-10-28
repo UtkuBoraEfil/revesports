@@ -75,12 +75,14 @@ export type Application = {
   _updatedAt: string;
   _rev: string;
   name?: string;
-  gender?: "male" | "female" | "other";
+  email?: string;
+  instagramUsername?: string;
+  gender?: "erkek" | "kad\u0131n" | "di\u011Fer";
   dob?: string;
   height?: number;
   phone?: string;
   education?: string;
-  position?: "Setter (S)" | "Outside Hitter (OH)" | "Opposite Hitter (Opp or RS)" | "Libero (L)" | "Middle Blocker (MB or MH)";
+  positions?: Array<"Setter (S)" | "Outside Hitter (OH)" | "Opposite Hitter (Opp or RS)" | "Libero (L)" | "Middle Blocker (MB or MH)">;
   clubExperience?: {
     hasExperience?: boolean;
     details?: Array<{
@@ -100,7 +102,8 @@ export type Application = {
   langExams?: {
     hasExam?: boolean;
     details?: Array<{
-      examName?: "TOEFL" | "IELTS" | "SAT" | "ACT" | "Duolingo";
+      examName?: "TOEFL" | "IELTS" | "SAT" | "ACT" | "Duolingo" | "Other";
+      otherExamName?: string;
       score?: number;
       _key: string;
     }>;

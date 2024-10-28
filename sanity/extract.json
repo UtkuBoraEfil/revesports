@@ -367,6 +367,20 @@
         },
         "optional": true
       },
+      "email": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "instagramUsername": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
       "gender": {
         "type": "objectAttribute",
         "value": {
@@ -374,15 +388,15 @@
           "of": [
             {
               "type": "string",
-              "value": "male"
+              "value": "erkek"
             },
             {
               "type": "string",
-              "value": "female"
+              "value": "kadın"
             },
             {
               "type": "string",
-              "value": "other"
+              "value": "diğer"
             }
           ]
         },
@@ -416,32 +430,35 @@
         },
         "optional": true
       },
-      "position": {
+      "positions": {
         "type": "objectAttribute",
         "value": {
-          "type": "union",
-          "of": [
-            {
-              "type": "string",
-              "value": "Setter (S)"
-            },
-            {
-              "type": "string",
-              "value": "Outside Hitter (OH)"
-            },
-            {
-              "type": "string",
-              "value": "Opposite Hitter (Opp or RS)"
-            },
-            {
-              "type": "string",
-              "value": "Libero (L)"
-            },
-            {
-              "type": "string",
-              "value": "Middle Blocker (MB or MH)"
-            }
-          ]
+          "type": "array",
+          "of": {
+            "type": "union",
+            "of": [
+              {
+                "type": "string",
+                "value": "Setter (S)"
+              },
+              {
+                "type": "string",
+                "value": "Outside Hitter (OH)"
+              },
+              {
+                "type": "string",
+                "value": "Opposite Hitter (Opp or RS)"
+              },
+              {
+                "type": "string",
+                "value": "Libero (L)"
+              },
+              {
+                "type": "string",
+                "value": "Middle Blocker (MB or MH)"
+              }
+            ]
+          }
         },
         "optional": true
       },
@@ -594,8 +611,19 @@
                           {
                             "type": "string",
                             "value": "Duolingo"
+                          },
+                          {
+                            "type": "string",
+                            "value": "Other"
                           }
                         ]
+                      },
+                      "optional": true
+                    },
+                    "otherExamName": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
                       },
                       "optional": true
                     },

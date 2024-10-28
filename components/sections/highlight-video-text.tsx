@@ -85,9 +85,7 @@ export function HighlightVideoText({}) {
 
         {/* Why Section */}
         <div className="space-y-4">
-          <h3 className="text-xl font-bold text-sky-400">
-            Neden Highlight Video?
-          </h3>
+          <h3 className="text-xl font-bold">Neden Highlight Video?</h3>
           <p className="text-gray-300">
             Çünkü yeteneğiniz, tek bir videoyla binlerce kelimeden daha
             fazlasını anlatabilir. Bu videolar, potansiyelinizi en etkili
@@ -97,7 +95,7 @@ export function HighlightVideoText({}) {
         </div>
 
         {/* Target Section */}
-        <div className="bg-slate-900/20 p-6 rounded-lg">
+        <div className="bg-slate-900/50 p-6 rounded-lg">
           <h3 className="text-xl font-bold mb-4">Hedefiniz Ne Olursa Olsun:</h3>
           <ul className="space-y-2 ml-6 text-gray-300">
             <li className="list-disc">Spor bursu başvuruları</li>

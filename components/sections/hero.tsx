@@ -10,14 +10,12 @@ export function Hero() {
     >
       <div className="min-h-screen min-w-full bg-flag-image grid grid-rows-3 place-items-center overflow-hidden">
         <div className="relative row-span-3">
-          <h1 className="lg:text-[156px] md:text-[120px] sm:text-7xl text-6xl text-center lg:leading-[148px] md:leading-[120px]">
+          <h1 className="lg:text-[140px] md:text-[120px] sm:text-7xl text-6xl text-center lg:leading-[140px] md:leading-[120px]">
             REVESPORT
             <br />
             HAYALLERİNİ
             <br />
-            GERÇEĞE
-            <br />
-            DÖNÜŞTÜR.
+            GERÇEĞE DÖNÜŞTÜR.
           </h1>
           <div className="absolute -bottom-20 w-full flex justify-center z-[1]">
             <button className="arrow-down w-[72px] h-[125px] grid place-items-center">
