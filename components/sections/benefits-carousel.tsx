@@ -12,7 +12,7 @@ export function BenefitsCarousel() {
             <p className={`${roboto.className} font-bold`}>01/04</p>
           </div>
           <h2 className="lg:text-8xl md:text-6xl text-4xl">
-            KOLEJ VOLEYBOLU İLE YETENEKLERİNİZİ GELİŞTİRİN.
+            KOLEJ VOLEYBOLU İLE YETENEKLERİNİZİ GELİŞTİRİN.
           </h2>
         </div>
         <div className="flex w-full justify-between items-end gap-5">

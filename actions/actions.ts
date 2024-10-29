@@ -47,3 +47,26 @@ export const createApplication = async (input: any) => {
     };
   }
 };
+
+export const createNewsletter = async (input: any) => {
+  try {
+    const newsletter = {
+      _type: "newsletter",
+      ...input,
+    };
+    await client
+      .withConfig({
+        token: process.env.SANITY_WRITE_API_TOKEN,
+      })
+      .create(newsletter);
+
+    return {
+      status: "success",
+    };
+  } catch (error) {
+    console.error("[ERROR_WHILE_CREATING_CONTACT]", error);
+    return {
+      status: "error",
+    };
+  }
+};

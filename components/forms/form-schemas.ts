@@ -194,3 +194,14 @@ export const scholarshipFormSchema = z.object({
 });
 
 export type ScholarshipFormSchema = z.infer<typeof scholarshipFormSchema>;
+
+export const newsletterSchema = z.object({
+  email: z
+    .string()
+    .email({ message: "Lütfen geçerli bir e-posta adresi giriniz." })
+    .min(5, {
+      message: "Email must be at least 5 character",
+    }),
+});
+
+export type NewsletterSchema = z.infer<typeof newsletterSchema>;
