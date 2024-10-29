@@ -47,7 +47,7 @@ export default async function Page({
           />
         ))}
         {blogs.length === 0 && (
-          <h1 className="px-2 text-4xl">No posts found...</h1>
+          <h1 className="px-2 text-4xl">Post bulunamadı...</h1>
         )}
       </div>
     </section>

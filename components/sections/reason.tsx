@@ -9,7 +9,7 @@ export function Reason() {
           <SectionsSidebar active="The Reason" />
           <div className="flex flex-col gap-8 ">
             <h2 className="lg:text-8xl sm:text-6xl text-4xl leading-none">
-              BİZİ EN İYİ YAPAN SEBEPLER.
+              BİZİ FARKLI KILAN SEBEPLER
             </h2>
             <p className={`opacity-60 ${roboto.className}`}>
               ReveSport’un kurucusu olarak, Amerika’ya gelme sürecini bizzat

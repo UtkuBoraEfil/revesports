@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import { Roboto } from "next/font/google";
+
 export const impact = localFont({
   src: "./impact.woff",
   display: "swap",

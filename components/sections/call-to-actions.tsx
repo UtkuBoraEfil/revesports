@@ -8,8 +8,8 @@ export function CallToActions() {
         text="Hizmette sunulan tüm bilgi ve veriler en güncel bilgilerdir"
       />
       <CallToActionItem
-        title="DOĞRULANMIŞ HİZMET"
-        text="Platformumuz, çeşitli taraflarca resmi ve doğrulanmış hizmetler sunmaktadır"
+        title="GÜVENİLİR HİZMET"
+        text="Platformumuz, güvenilir hizmetler sunmaktadır"
       />
       <CallToActionItem
         title="HIZLI GERİ DÖNÜŞ"

@@ -19,7 +19,7 @@ export function BenefitsCarousel() {
           <p className="font-roboto text-sm lg:text-base">
             ABD'de voleybol oynamayı ve okumayı mı hayal ediyorsunuz?
           </p>
-          <h2 className="lg:text-8xl text-6xl">R.</h2>
+          {/* <h2 className="lg:text-8xl text-6xl">R.</h2> */}
         </div>
       </div>
 

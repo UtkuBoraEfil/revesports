@@ -21,7 +21,7 @@ export function Services() {
         <div className="w-full lg:px-44 md:px-14 px-6">
           <div className="w-full flex flex-col-reverse md:flex-row md:gap-28 gap-10 justify-start md:items-center  mb-10">
             <Image
-              src="/images/services1.jpeg"
+              src="/images/services1.jpg"
               alt="image"
               width={420}
               height={440}
