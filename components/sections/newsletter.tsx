@@ -15,7 +15,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Loader } from "lucide-react";
-import { createNewsletter } from "@/actions/actions";
+import { createNewsletter, checkEmailExists } from "@/actions/actions";
 
 export function Newsletter() {
   const [isCreatePending, startCreateTransition] = useTransition();
@@ -29,6 +29,15 @@ export function Newsletter() {
 
   function onSubmit(input: { email: string }) {
     startCreateTransition(async () => {
+      const emailExists = await checkEmailExists(input.email);
+
+      if (emailExists) {
+        toast.warning("Bu e-posta zaten kayıtlı.", {
+          description: "Teşekkürler!",
+        });
+        return;
+      }
+
       const { status } = await createNewsletter(input);
 
       if (status === "error") {

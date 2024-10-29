@@ -70,3 +70,16 @@ export const createNewsletter = async (input: any) => {
     };
   }
 };
+
+export async function checkEmailExists(email: string) {
+  const query = `*[_type == "newsletter" && email == $email][0]`;
+  const params = { email };
+
+  try {
+    const result = await client.fetch(query, params);
+    return !!result; // Returns true if email exists, false otherwise
+  } catch (error) {
+    console.error("Error checking email:", error);
+    return false;
+  }
+}
