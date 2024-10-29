@@ -16,7 +16,7 @@ export function Footer() {
             <Link
               className="bg-default-white rounded-full p-2 size-10 hover:bg-default-black hover:fill-white transition-colors duration-300"
               href={
-                "https://api.whatsapp.com/send?phone=+919876543210&text=Hello%20there!"
+                "https://api.whatsapp.com/send?phone=+14434974576&text=Merhaba,%20Revesport%20hakkında%20bilgi%20almak%20istiyorum!"
               }
             >
               <Whatsapp />
