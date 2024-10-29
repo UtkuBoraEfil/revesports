@@ -31,10 +31,10 @@ export default function CategoryBadge({
           <button
             key={`${category.slug?.current}-${category.title}-${idx}`}
             className={cn(
-              "text-base px-4 rounded-full font-medium text-center flex h-8 items-center justify-center text-muted-foreground hover:text-default-white transition-colors",
+              "text-base px-4 rounded-full font-medium text-center flex h-8 items-center justify-center text-muted-foreground hover:text-default-white transition-colors bg-muted",
               searchParams.has("category") &&
                 searchParams.get("category") === category.slug?.current &&
-                "bg-muted text-default-white",
+                "text-default-white",
               roboto.className
             )}
             onClick={() => {

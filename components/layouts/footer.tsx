@@ -23,7 +23,7 @@ export function Footer() {
             </Link>
             <Link
               className="bg-default-white rounded-full p-2 text-default-black size-10 hover:bg-default-black hover:text-default-white transition-colors duration-300"
-              href={"https://www.instagram.com/revesport/"}
+              href={"https://www.instagram.com/reveesport/"}
               target="_blank"
               rel="noreferrer noopener"
             >

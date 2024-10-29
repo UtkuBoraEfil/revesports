@@ -1,6 +1,7 @@
 "use server";
 
 import { client } from "@/sanity/lib/client";
+import { defineQuery } from "next-sanity";
 
 export const createContact = async (input: any) => {
   try {
@@ -72,7 +73,7 @@ export const createNewsletter = async (input: any) => {
 };
 
 export async function checkEmailExists(email: string) {
-  const query = `*[_type == "newsletter" && email == $email][0]`;
+  const query = defineQuery(`*[_type == "newsletter" && email == $email][0]`);
   const params = { email };
 
   try {
