@@ -90,7 +90,7 @@ body {
         rgba(0, 0, 0, 0.315),
         rgba(0, 0, 0, 0.629)
       ),
-      url("/images/flag.jpeg");
+      url("/images/flag.webp");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
