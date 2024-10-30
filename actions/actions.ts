@@ -40,14 +40,24 @@ export const createApplication = async (input: ScholarshipFormSchema) => {
       _type: "application",
       ...input,
     };
-    await client
-      .withConfig({
-        token: process.env.SANITY_WRITE_API_TOKEN,
-      })
-      .create(contact);
 
-    await sendEmailToUser(input.name, input.email);
-    await sendEmailToAdmin(input);
+    await Promise.all([
+      client
+        .withConfig({
+          token: process.env.SANITY_WRITE_API_TOKEN,
+        })
+        .create(contact),
+      sendEmailToUser(input.name, input.email),
+      sendEmailToAdmin(input),
+    ]);
+    // await client
+    //   .withConfig({
+    //     token: process.env.SANITY_WRITE_API_TOKEN,
+    //   })
+    //   .create(contact);
+
+    // await sendEmailToUser(input.name, input.email);
+    // await sendEmailToAdmin(input);
     return {
       status: "success",
     };

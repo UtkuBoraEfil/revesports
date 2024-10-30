@@ -9,7 +9,7 @@ export function Navbar() {
       <h2 className="md:text-2xl text-lg">
         <Link
           href={"/"}
-          className="w-16 md:w-24 inline-block"
+          className="w-12 md:w-16 inline-block"
         >
           <Logo />
         </Link>
