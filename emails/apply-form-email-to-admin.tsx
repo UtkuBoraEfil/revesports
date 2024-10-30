@@ -61,7 +61,8 @@ export const ApplyFormEmailToAdmin = ({
       <Body style={main}>
         <Container style={container}>
           <Img
-            src={`${baseUrl}/email/logo.png`}
+            // src={`${baseUrl}/email/logo.png`}
+            src="https://i.ibb.co/zSzPY88/logo.png"
             width="100"
             height="100"
             alt="Revesport"
