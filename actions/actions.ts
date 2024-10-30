@@ -50,14 +50,7 @@ export const createApplication = async (input: ScholarshipFormSchema) => {
       sendEmailToUser(input.name, input.email),
       sendEmailToAdmin(input),
     ]);
-    // await client
-    //   .withConfig({
-    //     token: process.env.SANITY_WRITE_API_TOKEN,
-    //   })
-    //   .create(contact);
 
-    // await sendEmailToUser(input.name, input.email);
-    // await sendEmailToAdmin(input);
     return {
       status: "success",
     };
@@ -132,7 +125,11 @@ export async function sendEmailToAdmin(input: ScholarshipFormSchema) {
 
     const { data, error } = await resend.emails.send({
       from: "Revesport <notify@reve-sport.com>",
-      to: ["info@reve-sport.com", "ardakaanaydilek@gmail.com"],
+      to: [
+        "info@reve-sport.com",
+        "ardakaanaydilek@gmail.com",
+        "revesportofficial@gmail.com",
+      ],
       subject: "Revesport - Yeni Başvuru",
       react: ApplyFormEmailToAdmin({ input: input }),
     });
