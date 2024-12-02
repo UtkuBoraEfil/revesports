@@ -91,7 +91,7 @@ export async function checkEmailExists(email: string) {
 
   try {
     const result = await client.fetch(query, params);
-    return !!result; // Returns true if email exists, false otherwise
+    return !!result;
   } catch (error) {
     console.error("Error checking email:", error);
     return false;
